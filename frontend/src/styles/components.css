@@ -1,0 +1,416 @@
+/* Mobile-First Navbar and Footer Sticky Styles */
+.navbar-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1020;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+}
+
+/* Body padding to account for fixed navbar and footer */
+body {
+  padding-top: 67.2px; /* Navbar height */
+  padding-bottom: 60px; /* Footer height */
+}
+
+/* Mobile-first responsive adjustments */
+@media (min-width: 576px) {
+  body {
+    padding-bottom: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 45px;
+  }
+}
+
+/* Dashboard Component Separation Styles */
+
+/* Navbar Section Styles */
+.profile-section {
+  position: relative;
+}
+
+.profile-section .dropdown-menu {
+  min-width: 280px;
+}
+
+.menu-section {
+  position: relative;
+}
+
+.menu-section .dropdown-menu {
+  min-width: 250px;
+}
+
+.dashboard-section {
+  position: relative;
+}
+
+/* Dashboard Component Styles */
+.profile-component {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-component--compact {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.menu-component {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.menu-component--horizontal {
+  padding: 1rem;
+}
+
+.menu-component--vertical {
+  /* Vertical menu styles handled by Bootstrap list-group */
+}
+
+.content-component {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+}
+
+.settings-component {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+}
+
+/* Mobile-First Responsive Design */
+/* Base styles (mobile) */
+.profile-section .dropdown-menu {
+  position: fixed !important;
+  top: 67.2px !important;
+  left: 10px !important;
+  right: 10px !important;
+  width: auto !important;
+  min-width: auto !important;
+}
+
+.menu-component--horizontal {
+  flex-direction: column;
+}
+
+.menu-component--horizontal .btn {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.profile-component--compact {
+  text-align: center;
+}
+
+.content-component,
+.settings-component {
+  padding: 1rem;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .profile-section .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: auto !important;
+    right: 0 !important;
+    width: 280px !important;
+    min-width: 280px !important;
+  }
+  
+  .menu-component--horizontal {
+    flex-direction: row;
+  }
+  
+  .menu-component--horizontal .btn {
+    margin-bottom: 0;
+    width: auto;
+  }
+  
+  .profile-component--compact {
+    text-align: left;
+  }
+  
+  .content-component,
+  .settings-component {
+    padding: 1.5rem;
+  }
+}
+
+/* Visual Distinctions */
+.dashboard-section .btn {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+  color: white;
+}
+
+/* Component Interaction States */
+.profile-section .dropdown-menu .dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+.menu-component .list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.menu-component .list-group-item.active {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Loading and Error States */
+.content-component .spinner-border,
+.settings-component .spinner-border {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.content-component .alert,
+.settings-component .alert {
+  margin-bottom: 1rem;
+}
+
+/* Dashboard Layout Improvements */
+.dashboard-components-layout {
+  gap: 1.5rem;
+}
+
+.dashboard-components-layout .row {
+  margin-bottom: 1.5rem;
+}
+
+/* Component Composition Spacing */
+.dashboard-component + .dashboard-component {
+  margin-top: 1.5rem;
+}
+
+/* Settings Component Form Styling */
+.settings-component .card {
+  border: 1px solid #dee2e6;
+  margin-bottom: 1rem;
+}
+
+.settings-component .card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.settings-component .form-check {
+  margin-bottom: 0.75rem;
+}
+
+.settings-component .form-select,
+.settings-component .form-control {
+  margin-bottom: 0.5rem;
+}
+
+/* Content Component Metrics */
+.content-component .card {
+  border: 1px solid #dee2e6;
+  margin-bottom: 1rem;
+}
+
+.content-component .display-6 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.content-component .list-group-item {
+  border-left: none;
+  border-right: none;
+  padding: 0.75rem 0;
+}
+
+.content-component .list-group-item:first-child {
+  border-top: none;
+}
+
+.content-component .list-group-item:last-child {
+  border-bottom: none;
+}
+
+/* Profile Component Avatar Styling */
+.profile-component img,
+.profile-section img {
+  object-fit: cover;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.profile-component .badge,
+.profile-section .badge {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+}
+
+/* Menu Component Badge Styling */
+.menu-component .badge,
+.menu-section .badge {
+  font-size: 0.6rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dashboard Section Button Styling */
+.dashboard-section .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.dashboard-section .btn:hover:not(:disabled) {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+/* Mobile-First 3-Dot Menu Styles */
+.navbar-custom .dropdown-menu {
+  min-width: 200px;
+}
+
+.navbar-custom .dropdown-toggle::after {
+  display: none; /* Hide default dropdown arrow for 3-dot menu */
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .navbar-custom .dropdown-menu {
+    min-width: 220px;
+  }
+}
+
+/* Logout Button Styling - Mobile First */
+.profile-section [data-testid="logout-button"] {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.profile-section [data-testid="logout-button"]:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: white;
+  transform: scale(1.05);
+}
+
+.profile-section [data-testid="logout-button"]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.profile-section [data-testid="logout-button"]:hover::before {
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-bottom-color: #333;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Component Error Boundaries */
+.component-error-boundary {
+  padding: 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.component-error-boundary h5 {
+  color: #dc3545;
+  margin-bottom: 1rem;
+}
+
+.component-error-boundary p {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+/* Animation and Transitions */
+.profile-section .dropdown-menu,
+.menu-section .dropdown-menu {
+  transition: opacity 0.15s ease-in-out;
+}
+
+.menu-component .list-group-item {
+  transition: background-color 0.15s ease-in-out;
+}
+
+.dashboard-section .btn {
+  transition: all 0.15s ease-in-out;
+}
+
+/* Focus States for Accessibility */
+.dashboard-section .btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.menu-component .list-group-item:focus {
+  box-shadow: inset 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Mobile-First Print Styles */
+@media print {
+  .navbar-custom,
+  .site-footer,
+  .profile-section,
+  .dashboard-section {
+    display: none !important;
+  }
+  
+  .settings-component {
+    display: none !important;
+  }
+  
+  .content-component {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+  
+  body {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
